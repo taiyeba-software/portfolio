@@ -12,6 +12,7 @@ export const GlareCard = ({
   const isPointerInside = useRef(false);
   const refElement = useRef<HTMLDivElement>(null);
   const isTouchDeviceRef = useRef(false);
+  const prefersReducedMotionRef = useRef(false);
   const [isInitialized, setIsInitialized] = useState(false);
   const state = useRef({
     background: { x: 50, y: 50 },
@@ -19,6 +20,10 @@ export const GlareCard = ({
   });
 
   useEffect(() => {
+    prefersReducedMotionRef.current =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // Detect touch device only once
     const hasTouchScreen =
       typeof window !== "undefined" &&
@@ -110,6 +115,7 @@ export const GlareCard = ({
       ref={refElement}
       onPointerMove={(event) => {
         if (!isInitialized) return;
+        if (prefersReducedMotionRef.current) return;
         
         if (isTouchDeviceRef.current) {
           // On touch devices, only update background position, not rotation
@@ -160,6 +166,7 @@ export const GlareCard = ({
       }}
       onPointerEnter={() => {
         if (!isInitialized) return;
+        if (prefersReducedMotionRef.current) return;
         
         if (isTouchDeviceRef.current) {
           // On touch devices, increase opacity on touch
@@ -181,6 +188,7 @@ export const GlareCard = ({
       }}
       onPointerLeave={() => {
         if (!isInitialized) return;
+        if (prefersReducedMotionRef.current) return;
         
         if (isTouchDeviceRef.current) {
           // On touch devices, return to default opacity

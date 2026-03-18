@@ -1,13 +1,6 @@
-import { siteConfig } from "@/lib/data";
-import { ArrowDown, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { GlareCardHero } from "@/components/glare-card-hero";
 import Image from "next/image";
-import { M_PLUS_Code_Latin } from "next/font/google";
-
-const mPlusCodeLatin = M_PLUS_Code_Latin({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export function Hero() {
   return (
@@ -25,7 +18,7 @@ export function Hero() {
 
                 {/* Main Statement */}
                   <h1 className="type-h1 mb-8 max-w-3xl xl:text-6xl">
-                    I design and <span className="font-light text-primary" style={{ fontFamily: mPlusCodeLatin.style.fontFamily }}>develop()</span>{" "}
+                    I design and <span className="font-light text-primary" style={{ fontFamily: "var(--font-m-plus-code-latin)" }}>develop()</span>{" "}
                     <span className="font-semibold">
                       products, shape meaningful brands, and build + lead inspired,
                       talented teams.

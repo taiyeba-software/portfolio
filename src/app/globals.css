@@ -41,9 +41,9 @@
 
 @theme inline {
   --font-sans: var(--font-inter), 'Inter Fallback', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-sora), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --font-display-alt: var(--font-space-grotesk), var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace;
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-display-alt: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-m-plus-code-latin), ui-monospace, monospace;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));

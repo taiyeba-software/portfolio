@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Sora, Space_Grotesk } from 'next/font/google'
+import { Inter, M_PLUS_Code_Latin, Sora } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -12,14 +12,10 @@ const sora = Sora({
   variable: '--font-sora',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const mPlusCodeLatin = M_PLUS_Code_Latin({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-m-plus-code-latin',
 })
 
 export const metadata: Metadata = {
@@ -35,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${sora.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${sora.variable} ${mPlusCodeLatin.variable} font-sans antialiased`}
       >
         {children}
       </body>
