@@ -36,9 +36,9 @@ export function About() {
       <MaskContainer
         revealText={teaserText}
         maskTransitionDuration={0.55}
-        maskTransitionDelay={0.08}
+        maskTransitionDelay={0.00}
         fadeTransitionDuration={0.55}
-        fadeTransitionDelay={0.08}
+        fadeTransitionDelay={0.00}
         className="min-h-svh w-full bg-black text-white dark:text-black"
       >
         {fullAboutText}
