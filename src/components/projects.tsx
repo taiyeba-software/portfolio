@@ -73,9 +73,34 @@ export function Projects() {
                       </p>
                     </div>
 
-                    <p className="type-body text-muted-foreground">
-                      {project.description}
-                    </p>
+                    <div className="space-y-2">
+                      {project.problem && (
+                        <p className="text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">Problem:</span> {project.problem}
+                        </p>
+                      )}
+
+                      {project.solution && (
+                        <p className="text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">Solution:</span> {project.solution}
+                        </p>
+                      )}
+
+                      <p className="type-body whitespace-pre-line text-muted-foreground">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {project.features && (
+                      <div className="pt-2">
+                        <p className="mb-1 text-sm font-semibold text-primary">Key Features:</p>
+                        <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
+                          {project.features.map((feature, i) => (
+                            <li key={i}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
 
                     <div className="flex flex-wrap gap-2 border-t border-border/60 pt-3">
                       {project.tags.map((tag) => (

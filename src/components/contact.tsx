@@ -1,7 +1,4 @@
 import { siteConfig } from '@/lib/data'
-import { Mail, Github, Linkedin, FileText } from 'lucide-react'
-// import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 
 export function Contact() {
   return (
@@ -14,52 +11,32 @@ export function Contact() {
               Get in Touch
             </h3>
             <p className="type-body mx-auto mb-10 max-w-lg text-muted-foreground text-pretty">
-              I&apos;m actively seeking internship roles where I can learn, contribute meaningfully, and strengthen my engineering fundamentals.
+              I am actively looking for internship opportunities where I can contribute to backend systems, learn from experienced engineers, and grow into a production-level developer.
             </p>
           </div>
 
-          {/* Primary CTA */}
-          <div className="mb-6 flex justify-center">
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=islamtaiyeba38@gmail.com&su=Internship%20Opportunity&body=Hi%20Taiyeba,%0A%0AI%20would%20like%20to%20connect%20regarding%20an%20opportunity.%0A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.35)]"
-            >
-              <Mail className="h-4 w-4" />
-              Send me an email
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+            <a href={`mailto:${siteConfig.email}`} className="btn-primary">
+              📧 Email Me
             </a>
-          </div>
 
-          {/* Secondary CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            <Link
+            <a
               href={siteConfig.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-white/3 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-white/8 hover:border-primary/50 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.2)]"
+              className="inline-flex items-center rounded-lg border border-border/50 bg-white/3 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-white/8 hover:border-primary/50 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.2)]"
             >
-              <Linkedin className="h-4 w-4" />
-              LinkedIn
-            </Link>
-            <Link
+              💼 LinkedIn
+            </a>
+
+            <a
               href={siteConfig.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-white/3 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-white/8 hover:border-primary/50 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.2)]"
+              className="inline-flex items-center rounded-lg border border-border/50 bg-white/3 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-white/8 hover:border-primary/50 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.2)]"
             >
-              <Github className="h-4 w-4" />
-              GitHub
-            </Link>
-            <Link
-              href="/interview strategy.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-white/3 px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-white/8 hover:border-primary/50 hover:shadow-[0_12px_32px_-8px_hsl(var(--primary)/0.2)]"
-            >
-              <FileText className="h-4 w-4" />
-              Resume
-            </Link>
+              💻 GitHub
+            </a>
           </div>
         </div>
       </div>
